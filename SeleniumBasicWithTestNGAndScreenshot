@@ -1,0 +1,174 @@
+package P1;
+
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class C3 {
+
+	public static WebDriver dr;
+	public static String TCName = "";
+
+	@BeforeMethod
+	public static void start() {
+		dr = new FirefoxDriver();
+		dr.get("http://demoqa.com/");
+		dr.manage().window().maximize();
+
+	}
+
+	@AfterMethod
+	public static void teardown(ITestResult rs) {
+
+		try {
+			if (!rs.isSuccess()) {
+				File scr = ((TakesScreenshot) dr)
+						.getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(scr, new File("./FailedScreenshot/" + TCName
+						+ ".png"));
+			}
+
+		} catch (Exception e) {
+			System.out.println("Unable to take screenshot for TC - " + TCName);
+		}
+
+		dr.quit();
+	}
+
+	@Test
+	public static void Test01() {
+
+		TCName = "Test01";
+		Reporter.log("Reg - Demoqa Test01");
+
+		// TODO Auto-generated method stub
+
+		// click
+		dr.findElement(By.xpath(".//*[@id='menu-item-37']/a")).click();
+		// Type
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		dr.findElement(By.xpath(".//*[@id='name_3_firstname']")).sendKeys(
+				"Anuradha");
+
+		WebElement country = dr.findElement(By.xpath(".//*[@id='dropdown_7']"));
+		new Select(country).selectByVisibleText("India");
+
+		dr.findElement(By.xpath(".//*[@id='name_3_lastname']")).sendKeys(
+				"Nagarajan");
+
+		dr.findElement(
+				By.xpath(".//*[@id='pie_register']/li[2]/div/div/input[1]"))
+				.click();
+
+		dr.findElement(
+				By.xpath(".//*[@id='pie_register']/li[3]/div/div/input[1]"))
+				.click();
+
+		dr.findElement(
+				By.xpath(".//*[@id='pie_register']/li[3]/div/div/input[2]"))
+				.click();
+
+		WebElement Dobmonth = dr.findElement(By.xpath(".//*[@id='mm_date_8']"));
+		new Select(Dobmonth).selectByVisibleText("8");
+
+		WebElement Dobdate = dr.findElement(By.xpath(".//*[@id='dd_date_8']"));
+		new Select(Dobdate).selectByVisibleText("21");
+
+		WebElement Dobyear = dr.findElement(By.xpath(".//*[@id='yy_date_8']"));
+		new Select(Dobyear).selectByVisibleText("1995");
+
+		dr.findElement(By.xpath(".//*[@id='phone_9']")).sendKeys(" ");
+
+		dr.findElement(By.xpath(".//*[@id='username']")).sendKeys("Nanu21");
+
+		dr.findElement(By.xpath(".//*[@id='email_1']")).sendKeys(
+				"nanuradha.2195@gmail.com");
+
+		dr.findElement(By.xpath(".//*[@id='description']"))
+				.sendKeys(
+						"This is Anuradha. I am working in Cognizant as a Test professional.");
+
+		dr.findElement(By.xpath(".//*[@id='password_2']"))
+				.sendKeys("Jamun1234");
+
+		dr.findElement(By.xpath(".//*[@id='confirm_password_password_2']"))
+				.sendKeys("Jamun1234");
+
+		dr.findElement(By.xpath(".//*[@id='pie_register']/li[14]/div/input"))
+				.click();
+	}
+
+	@Test
+	public static void Test02() {
+
+		TCName = "Test02";
+		// TODO Auto-generated method stub
+		Reporter.log("Reg - Demoqa Test02");
+		// click
+		dr.findElement(By.xpath(OR.lnk_Reg)).click();
+		// Type
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		dr.findElement(By.xpath(OR.txtbx_FirstName)).sendKeys("Anuradha");
+		WebElement country = dr.findElement(By.xpath(OR.drp_COuntry));
+		new Select(country).selectByVisibleText("India");
+		dr.findElement(By.xpath(OR.txtbx_LastName)).sendKeys("Nagarajan");
+		dr.findElement(
+				By.xpath(".//*[@id='pie_register']/li[2]/div/div/input[1]"))
+				.click();
+		dr.findElement(
+				By.xpath(".//*[@id='pie_register']/li[3]/div/div/input[1]"))
+				.click();
+		dr.findElement(
+				By.xpath(".//*[@id='pie_register']/li[3]/div/div/input[2]"))
+				.click();
+		WebElement Dobmonth = dr.findElement(By.xpath(".//*[@id='mm_date_8']"));
+		new Select(Dobmonth).selectByVisibleText("8");
+		WebElement Dobdate = dr.findElement(By.xpath(".//*[@id='dd_date_8']"));
+		new Select(Dobdate).selectByVisibleText("21");
+		WebElement Dobyear = dr.findElement(By.xpath(".//*[@id='yy_date_8']"));
+		new Select(Dobyear).selectByVisibleText("1995");
+		dr.findElement(By.xpath(".//*[@id='phone_9']")).sendKeys(" ");
+
+		dr.findElement(By.xpath(".//*[@id='username']")).sendKeys("Nanu21");
+
+		dr.findElement(By.xpath(".//*[@id='email_1']")).sendKeys(
+				"nanuradha.2195@gmail.com");
+
+		dr.findElement(By.xpath(".//*[@id='description']"))
+				.sendKeys(
+						"This is Anuradha. I am working in Cognizant as a Test professional.");
+
+		dr.findElement(By.xpath(".//*[@id='password_2']"))
+				.sendKeys("Jamun1234");
+
+		dr.findElement(By.xpath(".//*[@id='confirm_password_password_2']"))
+				.sendKeys("Jamun1234");
+
+		dr.findElement(By.xpath(".//*[@id='pie_register']/li[14]/div/input"))
+				.click();
+	}
+
+}
