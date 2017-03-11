@@ -1,0 +1,10 @@
+package P1;
+
+public class OR {
+	
+	public static String lnk_Reg = ".//*[@id='menu-item-374']/a";
+	public static String txtbx_FirstName = ".//*[@id='name_3_firstname']";
+	public static String txtbx_LastName =".//*[@id='name_3_lastname']";
+	public static String drp_COuntry = ".//*[@id='dropdown_7']";
+
+}
