@@ -100,11 +100,11 @@ public class C3 {
 		dr.findElement(By.xpath(".//*[@id='username']")).sendKeys("Nanu21");
 
 		dr.findElement(By.xpath(".//*[@id='email_1']")).sendKeys(
-				"nanuradha.2195@gmail.com");
+				"");
 
 		dr.findElement(By.xpath(".//*[@id='description']"))
 				.sendKeys(
-						"This is Anuradha. I am working in Cognizant as a Test professional.");
+						" ");
 
 		dr.findElement(By.xpath(".//*[@id='password_2']"))
 				.sendKeys("Jamun1234");
@@ -155,11 +155,11 @@ public class C3 {
 		dr.findElement(By.xpath(".//*[@id='username']")).sendKeys("Nanu21");
 
 		dr.findElement(By.xpath(".//*[@id='email_1']")).sendKeys(
-				"nanuradha.2195@gmail.com");
+				"");
 
 		dr.findElement(By.xpath(".//*[@id='description']"))
 				.sendKeys(
-						"This is Anuradha. I am working in Cognizant as a Test professional.");
+						" ");
 
 		dr.findElement(By.xpath(".//*[@id='password_2']"))
 				.sendKeys("Jamun1234");
