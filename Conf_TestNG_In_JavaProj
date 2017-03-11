@@ -1,0 +1,8 @@
+
+
+```````````````````````
+
+- Right Click on Project >> Properties >> Select Java Build Path >> Select - Library Tab >> 
+select - Add Library in right menu >> Select TestNg >> Next >> Finish
+
+```````````````````````
