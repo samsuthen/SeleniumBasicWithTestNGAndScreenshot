@@ -9,7 +9,7 @@ public class OR {
 
 }
 
-/////////////////////////////////CREATE THE PROPERTY/CONFIGURATION FILE UNDER THE PROJECT//////////////////
+////////////////CREATE THE PROPERTY/CONFIGURATION FILE UNDER THE PROJECT//////////////////
 
 FILE SRC = NEW FILE("./FOLDER PATH");
 FILEINPUTSTREAM FIS = NEW FILEINPUTSTREAM(SRC);
@@ -17,3 +17,10 @@ PROPERTIES PRO = NEW PROPERTIES();
 PRO.LOAD(FIS);
 STRING CHROMPATH = PRO.GETPROPERTY(KEY NAME)
 SYSO("HEY THE CHROME DRIVER PATH IS ===" + CHROMPATH);
+
+//////////////// Extent Reports//////////////////
+
+ExtentReports logger = extentReports.get(classname.class);
+logger.init("path",true);
+logger.starttest("verify Page title);
+logger.log(logstatus.info,"Message"); ---->>> Add this line in every scripts as per the wish
